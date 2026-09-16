@@ -1,5 +1,5 @@
 FROM alpine:3.20
-RUN adduser -D -H app
+RUN apk add --no-cache busybox-extras && adduser -D -H app
 WORKDIR /srv
 COPY --chown=app:app . .
 USER app
